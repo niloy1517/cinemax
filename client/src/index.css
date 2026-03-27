@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+body {
+    font-family: "Outfit", sans-serif;
+}
+
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+:root {
+    --swiper-pagination-color: white;
+    /* Active dot color */
+    --swiper-pagination-bullet-inactive-color: #999999;
+    /* Inactive color */
+    --swiper-pagination-bullet-inactive-opacity: 0.2;
+}
+
+
+/* পুরো ওয়েবসাইটের জন্য স্ক্রলবার হাইড */
+html, body {
+  -ms-overflow-style: none;  /* Internet Explorer and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari and Opera */
+}
+
+
+
+.markdown-input {
+    @apply w-full border border-gray-300 rounded-md px-3 h-14  text-base 
+               focus:border-gray-700 focus:outline-none;
+}
+
+.markdown-label {
+    @apply absolute left-3 top-3 text-gray-500 bg-white px-1 pointer-events-none
+    transition-all duration-200
+    peer-placeholder-shown:top-3 peer-placeholder-shown:text-base
+    peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-700
+    peer-not-placeholder-shown:-top-2 peer-not-placeholder-shown:text-sm;
+}
